@@ -2,7 +2,6 @@ title: PrasadM's Blogfolio
 description: A blog about web development, technology, and the latest trends that featured by Prasad Madhuranga
 url: https://prasadkmd.vercel.app/
 baseurl: "" # the subpath of your site, e.g. /blog
-theme: minima
 cover: posts/img/127.0.0.1_4000_.webp
 name: Prasad Madhuranga
 local: "Panwila, Kandy, Sri Lanka"
