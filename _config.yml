@@ -1,5 +1,7 @@
 title: PrasadM's Blogfolio
 description: A blog about web development, technology, and the latest trends that featured by Prasad Madhuranga
+url: https://blogfolio-v2.vercel.app
+baseurl: ""
 # url: https://blogfolio-v2.vercel.app/
 cover: posts/img/127.0.0.1_4000_.webp
 name: Prasad Madhuranga
