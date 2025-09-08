@@ -1,0 +1,43 @@
+---
+layout: post
+title: Enabling LaTeX support using KaTeX
+date: '2024-12-26T01:09:00.003+05:30'
+author: PRASAD MADHURANGA
+tags:
+- Mathematics
+- How to
+- LaTeX
+- Engineering
+modified_time: '2024-12-26T01:14:02.968+05:30'
+thumbnail: https://blogger.googleusercontent.com/img/a/AVvXsEhhU7fM16hlJw55NC_obUCrJNV6Xw93uI1lNIQjFYqV6rsOQMG_l8MXpDqkkkayJhbdvVBGXLLw78XivlMwLum7dqD5LXJB0A-0TZ5CwMKdq-s8nNEdrSfBSN99iSU-QGj9gILU5Wc9WqAI80D1tXV_Opko2q8BJT3SLpikMyjMuz3GNSyDjA5CqkT5JOxW=s72-c
+blogger_id: tag:blogger.com,1999:blog-3281517134508459306.post-6345965270663553420
+blogger_orig_url: https://prasad-kmd.blogspot.com/2024/12/enabling-latex-support-using-katex.html
+
+permalink: /posts/:title-:year:month:day_:hour:minute:second:output_ext
+---
+
+<p>KaTeX is a fast, lightweight library for rendering mathematical expressions on web pages. Integrating KaTeX into your Blogger website enables you to display beautifully formatted mathematical equations and formulas. Below is a comprehensive guide to help you set up and use KaTeX in your Blogger posts.</p><p></p><div class="separator" style="clear: both; text-align: center;"><img data-original-height="600" data-original-width="1200" src="https://blogger.googleusercontent.com/img/a/AVvXsEhhU7fM16hlJw55NC_obUCrJNV6Xw93uI1lNIQjFYqV6rsOQMG_l8MXpDqkkkayJhbdvVBGXLLw78XivlMwLum7dqD5LXJB0A-0TZ5CwMKdq-s8nNEdrSfBSN99iSU-QGj9gILU5Wc9WqAI80D1tXV_Opko2q8BJT3SLpikMyjMuz3GNSyDjA5CqkT5JOxW=s16000" /></div><br /><br /><p></p><h3 data-pm-slice="1 5 []"><strong>Step 1: Include KaTeX Libraries</strong></h3><p>To render equations using KaTeX, you need to include the KaTeX CSS and JavaScript files in your Blogger template.</p><ol data-spread="true" start="1"><li><p><strong>Log in to Blogger</strong></p><ul data-spread="false"><li><p>Go to your Blogger dashboard and select the blog where you want to implement KaTeX.</p></li></ul></li><li><p><strong>Edit HTML Template</strong></p><ul data-spread="false"><li><p>Navigate to <code>Theme</code> &gt; <code>Customize</code> &gt; <code>Edit HTML</code>.</p></li></ul></li><li><p><strong>Add KaTeX Links</strong></p></li><ul data-spread="false"><li><p>Paste the following lines inside the <code>&lt;head&gt;</code> tag of your HTML template:</p></li></ul></ol><div><br /></div>
+<pre><code class="language-html">
+&lt;!-- KaTeX Supports --&gt;
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.18/dist/katex.min.css" integrity="sha384-veTAhWILPOotXm+kbR5uY7dRamYLJf58I7P+hJhjeuc7hsMAkJHTsPahAl0hBST0" crossorigin="anonymous"/&gt;
+    &lt;script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.18/dist/katex.min.js" integrity="sha384-v6mkHYHfY/4BWq54f7lQAdtIsoZZIByznQ3ZqN38OL4KCsrxo31SLlPiak7cj/Mg" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.18/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    });
+  &lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/katex@0.16.18/dist/contrib/copy-tex.min.js" integrity="sha384-HORx6nWi8j5/mYA+y57/9/CZc5z8HnEw4WUZWy5yOn9ToKBv1l58vJaufFAn9Zzi" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.18/dist/contrib/mhchem.min.js" integrity="sha384-F2ptQFZqNJuqfGGl28mIXyQ5kXH48spn7rcoS0Y9psqIKAcZPLd1NzwFlm/bl1mH" crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;!-- KaTeX Supports --&gt;
+</code></pre>
+<br />4.Save the changes to your template.
+<div><br /></div><div><h3 data-pm-slice="1 5 []"><strong>Step 3: Writing KaTeX in Posts</strong></h3><p>You can now include mathematical expressions in your blog posts using KaTeX.</p><ol data-spread="true" start="1"><li><p><strong>Compose a Post</strong></p><ul data-spread="false"><li><p>Go to the Blogger editor and write a new post.</p></li></ul></li><li><p><strong>Insert LaTeX Expressions</strong></p><ul data-spread="false"><li><p>Write your math expressions using the appropriate delimiters:</p><ul data-spread="false"><li><p>For <strong>inline math</strong>, use <code>$...$</code> (e.g., <code>$E = mc^2$</code>). $E = mc^2$ </p></li><li><p>For <strong>block math</strong>, use <code>$$...$$</code> (e.g., <code>$$\int_{a}^{b} f(x) dx$$</code>). $$\int_{a}^{b} f(x) dx$$ </p></li></ul></li></ul></li><li><p><strong>Publish the Post</strong></p><ul data-spread="false"><li><p>Preview the post to ensure the equations render correctly, then publish it.</p></li></ul></li></ol></div>

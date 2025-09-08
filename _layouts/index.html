@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  {% include stylesheet.html %}
+  {% include enFont.html %}
+  {% include siFont.html %}
+  {% include script.html %}
+</head>
+
+<body>
+  {% include loading.html %}
+  {% include tto.html %}
+  {% include scrollProgress.html %}
+  {% include rcp.html %}
+  {% include header.html %}
+  <main>
+    {% include home/hero.html %}
+    {{ content }}
+  </main>
+  {% include threejs.html %}
+  {% include footer.html %}
+  {% include vanta/rings.html %}
+  <script>
+    VANTA.RINGS({
+      el: "footer",
+      mouseControls: false,
+      touchControls: false,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0x0,
+      color: 0x2c84e8,
+      backgroundAlpha: 0.20
+    })
+  </script>
+</body>
+
+</html>

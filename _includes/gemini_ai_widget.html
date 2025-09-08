@@ -1,0 +1,144 @@
+<!--
+  To include this Gemini AI Chat Widget in your Jekyll page or layout,
+  add the following line where you want the widget to be loaded (typically
+  just before the closing </body> tag in a layout file like _layouts/default.html):
+
+  .{.%. include gemini_ai_widget.html .%.}.
+
+  Make sure the associated CSS file (`assets/css/gemini_ai_widget.css`) is also linked
+  in your site's <head>. (This might have been done automatically if you followed
+  the setup steps, but it's good to verify in your main layout file.)
+-->
+  
+<link rel="stylesheet" href="{{ '/assets/css/gemini_ai_widget.css' | relative_url }}">
+<div id="gemini-fab">AI</div>
+
+<div id="gemini-chat-window">
+    <div id="gemini-chat-header">
+        <span>AI Assistant</span>
+        <button id="gemini-close-btn">X</button>
+    </div>
+    <div id="gemini-chat-messages">
+        <!-- Messages will appear here -->
+    </div>
+    <div id="gemini-chat-input-area">
+        <input type="text" id="gemini-user-input" placeholder="Type your message...">
+        <button id="gemini-send-btn">Send</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fabButton = document.getElementById('gemini-fab');
+    const chatWindow = document.getElementById('gemini-chat-window');
+    const closeButton = document.getElementById('gemini-close-btn');
+
+    const userInput = document.getElementById('gemini-user-input');
+    const sendButton = document.getElementById('gemini-send-btn');
+    const messagesArea = document.getElementById('gemini-chat-messages');
+
+    if (fabButton) {
+        fabButton.addEventListener('click', function() {
+            const isHidden = chatWindow.style.display === 'none' || chatWindow.style.display === '';
+            chatWindow.style.display = isHidden ? 'flex' : 'none';
+            if (isHidden) {
+                userInput.focus();
+            }
+        });
+    }
+
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            chatWindow.style.display = 'none';
+        });
+    }
+
+    async function sendMessage() { // Changed to async to use await for fetch
+        const messageText = userInput.value.trim();
+        if (messageText === '') {
+            return;
+        }
+
+        appendMessage(messageText, 'user-message');
+        userInput.value = '';
+
+        const typingIndicator = appendMessage('AI is thinking...', 'ai-typing-indicator');
+
+        // --- Vercel Serverless Function Integration ---
+        // 1. Vercel Endpoint: Replace with your actual Vercel function URL
+        const vercelFunctionUrl = '/api/gemini-chat'; // Example: if your function is gemini-chat.js in the /api directory
+
+        // 2. Request Method: Typically POST
+        // 3. Headers: Content-Type is usually application/json
+        // 4. Request Body Format: Send user's message in a JSON object
+           const requestBody = { message: messageText };
+
+        try {
+            const response = await fetch(vercelFunctionUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestBody),
+            });
+
+            messagesArea.removeChild(typingIndicator); // Remove typing indicator once response starts processing
+
+            if (!response.ok) {
+                // Handle HTTP errors (e.g., response.status is 400, 500)
+                const errorData = await response.json(); // Try to get error message from body
+                appendMessage(`Error: ${errorData.error || response.statusText}`, 'ai-message error-message');
+                return;
+            }
+
+            // 5. Handling the Response: Access the AI's reply
+            //    Adjust '.reply' based on your Vercel function's actual JSON response structure
+            const data = await response.json();
+            const aiReply = data.reply; // Or data.message, data.text, etc.
+
+            if (aiReply) {
+                appendMessage(aiReply, 'ai-message');
+            } else {
+                appendMessage('AI response was empty or malformed.', 'ai-message error-message');
+            }
+
+        } catch (error) {
+            // 6. Error Handling: Catch network errors or other issues with the fetch call
+            messagesArea.removeChild(typingIndicator); // Ensure indicator is removed on error too
+            console.error('Error calling Vercel function:', error);
+            appendMessage('Sorry, something went wrong while contacting the AI. Please try again.', 'ai-message error-message');
+        }
+        // --- End Vercel Serverless Function Integration ---
+
+        // Placeholder: Remove this setTimeout block when using the actual fetch call above
+        // setTimeout(function() {
+        //     if (typingIndicator.parentNode === messagesArea) { // Check if still part of DOM
+        //          messagesArea.removeChild(typingIndicator);
+        //     }
+        //     const aiResponse = "This is a placeholder response from the AI. Replace this with actual API call logic above.";
+        //     appendMessage(aiResponse, 'ai-message');
+        // }, Math.random() * 1000 + 1000);
+    }
+
+    if (sendButton) {
+        sendButton.addEventListener('click', sendMessage);
+    }
+
+    if (userInput) {
+        userInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+
+    function appendMessage(text, className) {
+        const messageElement = document.createElement('div');
+        messageElement.textContent = text;
+        messageElement.className = 'message ' + className;
+        messagesArea.appendChild(messageElement);
+        messagesArea.scrollTop = messagesArea.scrollHeight;
+        return messageElement;
+    }
+});
+</script>

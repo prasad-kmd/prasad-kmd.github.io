@@ -1,0 +1,330 @@
+<style>
+    :root {
+        /* --primary: #2563eb; */
+        --primary-hover: #1d4ed8;
+        --bg-overlay: rgba(0, 0, 0, 0.4);
+        --transition: all 0.3s ease
+    }
+
+    .gdpr-consent {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(200%);
+        width: 90%;
+        max-width: 32rem;
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / .1), 0 8px 10px -6px rgb(0 0 0 / .1);
+        opacity: 0;
+        transition: var(--transition);
+        z-index: 1000
+    }
+
+    .gdpr-consent.active {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1
+    }
+
+    .gdpr-content {
+        padding: 1.5rem
+    }
+
+    .gdpr-header {
+        margin-bottom: 1rem
+    }
+
+    .gdpr-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin: 0 0 .5rem 0
+    }
+
+    .gdpr-description {
+        font-size: .875rem;
+        line-height: 1.5;
+        color: #4b5563;
+        margin: 0
+    }
+
+    .gdpr-preferences {
+        margin: 1.5rem 0
+    }
+
+    .preference-item {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        margin-bottom: .75rem
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 3rem;
+        height: 1.5rem
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #e5e7eb;
+        transition: var(--transition);
+        border-radius: 1rem
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 1.25rem;
+        width: 1.25rem;
+        left: .125rem;
+        bottom: .125rem;
+        background-color: #fff;
+        transition: var(--transition);
+        border-radius: 50%
+    }
+
+    input:checked+.slider {
+        background-color: var(--primary-color)
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(1.5rem)
+    }
+
+    .preference-label {
+        font-size: .875rem;
+        color: #4b5563
+    }
+
+    .gdpr-actions {
+        display: flex;
+        gap: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e5e7eb
+    }
+
+    .btn {
+        flex: 1;
+        padding: .75rem 1rem;
+        border-radius: .5rem;
+        font-size: .875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        border: none
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        color: #fff
+    }
+
+    .btn-primary:hover {
+        background-color: var(--primary-hover)
+    }
+
+    .btn-secondary {
+        background-color: #f3f4f6;
+        color: #4b5563
+    }
+
+    .btn-secondary:hover {
+        background-color: #e5e7eb
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-overlay);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999
+    }
+
+    .overlay.active {
+        opacity: 1;
+        visibility: visible
+    }
+
+    @media (max-width:640px) {
+        .gdpr-actions {
+            flex-direction: column
+        }
+
+        .gdpr-consent {
+            bottom: 0;
+            border-radius: 1rem 1rem 0 0;
+            max-width: 100%
+        }
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const consent = document.querySelector('.gdpr-consent');
+        const overlay = document.querySelector('.overlay');
+        const acceptAllBtn = document.getElementById('acceptAll');
+        const rejectAllBtn = document.getElementById('rejectAll');
+        const analyticsCheckbox = document.getElementById('analytics');
+        const marketingCheckbox = document.getElementById('marketing');
+
+        // Helper function to safely store preferences
+        function safeStorage(key, value) {
+            try {
+                localStorage.setItem(key, value);
+                return true;
+            } catch (e) {
+                console.log('Storage not available, preferences will not persist');
+                return false;
+            }
+        }
+
+        // **CHECK IF PREFERENCES EXIST BEFORE SHOWING CONSENT**
+        if (localStorage.getItem('gdprPreferences_melk')) {
+            console.log('Preferences already saved, not showing consent form.');
+            return; // Exit the function if preferences exist
+        }
+
+
+        // Show consent form after a short delay
+        setTimeout(() => {
+            consent.classList.add('active');
+            overlay.classList.add('active');
+        }, 1000);
+
+        function savePreferences(analytics, marketing) {
+            const preferences = {
+                essential: true, // Always required
+                analytics: analytics,
+                marketing: marketing,
+                timestamp: new Date().toISOString()
+            };
+
+            // Try to save to localStorage, but continue even if it fails
+            safeStorage('gdprPreferences_melk', JSON.stringify(preferences));
+
+            // Hide consent form with animation
+            consent.classList.remove('active');
+            overlay.classList.remove('active');
+
+            // Show thank you message
+            const message = analytics || marketing ?
+                'Thank you for accepting cookies!' :
+                'Preferences saved. Only essential cookies will be used.';
+
+            showNotification(message);
+
+            // You could also emit a custom event here for other scripts to react to
+            const event = new CustomEvent('gdprPreferencesSaved', {
+                detail: preferences
+            });
+            document.dispatchEvent(event);
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                    position: fixed;
+                    top: 1rem;
+                    right: 1rem;
+                    background: #10B981;
+                    color: white;
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+                    font-family: inherit;
+                    font-size: 0.875rem;
+                    z-index: 1000;
+                    opacity: 0;
+                    transform: translateY(-1rem);
+                    transition: all 0.3s ease;
+                `;
+
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            // Trigger animation
+            setTimeout(() => {
+                notification.style.opacity = '1';
+                notification.style.transform = 'translateY(0)';
+            }, 100);
+
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateY(-1rem)';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        acceptAllBtn.addEventListener('click', () => {
+            analyticsCheckbox.checked = true;
+            marketingCheckbox.checked = true;
+            savePreferences(true, true);
+        });
+
+        rejectAllBtn.addEventListener('click', () => {
+            analyticsCheckbox.checked = false;
+            marketingCheckbox.checked = false;
+            savePreferences(false, false);
+        });
+    });
+</script>
+<div class="overlay"></div>
+<div class="gdpr-consent">
+    <div class="gdpr-content">
+        <div class="gdpr-header">
+            <h2 class="gdpr-title">Cookie Preferences</h2>
+            <p class="gdpr-description">We use cookies to enhance your browsing experience, serve personalized content,
+                and analyze our traffic. Please select your preferences below.</p>
+        </div>
+
+        <div class="gdpr-preferences">
+            <div class="preference-item">
+                <label class="switch">
+                    <input type="checkbox" checked disabled>
+                    <span class="slider"></span>
+                </label>
+                <span class="preference-label">Essential Cookies (Required)</span>
+            </div>
+
+            <div class="preference-item">
+                <label class="switch">
+                    <input type="checkbox" id="analytics">
+                    <span class="slider"></span>
+                </label>
+                <span class="preference-label">Analytics Cookies</span>
+            </div>
+
+            <div class="preference-item">
+                <label class="switch">
+                    <input type="checkbox" id="marketing">
+                    <span class="slider"></span>
+                </label>
+                <span class="preference-label">Marketing Cookies</span>
+            </div>
+        </div>
+
+        <div class="gdpr-actions">
+            <button class="btn btn-secondary" id="rejectAll">Reject All</button>
+            <button class="btn btn-primary" id="acceptAll">Accept All</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+---
+layout: blog
+title: "Posts"
+permalink: /posts/
+activeblog: class="active"
+---
+
+<section class="blog-hero">
+    <div class="blog-hero-content">
+        <h1 class="blog-hero-title">Explore Our Latest Insights</h1>
+        <p class="blog-hero-subtitle">Dive into the world of mechanical engineering with our expert articles and
+            updates.</p>
+        <a href="#blog-grid" class="blog-hero-button">Discover Posts</a>
+    </div>
+</section>
+{% include threejs.html %}
+{% include vanta/fog.html %}
+<script>
+    VANTA.FOG({
+        el: "section",
+        mouseControls: false,
+        touchControls: false,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        speed: 0.75,
+        zoom: 0.50
+    })
+</script>
+<section id="blog-grid" class="blog-grid-section">
+    <div class="container">
+        <div class="blog-grid">
+            {% for post in site.posts %}
+            <article class="ntry post-item">
+                <div class="pThmb">
+                    <a class="thmb" href="{{ post.url | relative_url }}">
+                        <img alt="{{ post.title }}" class="imgThm"
+                            src="{% if post.thumbnail %}{{ post.thumbnail }}{% else %}https://placehold.co/400{% endif %}">
+                    </a>
+                    <div class="iFxd bl">
+                        <div class="aNm t">
+                            <div class="im" style="background-image: url('https://placehold.co/20x20');"></div>
+                            <bdi class="nm">{% if post.author %}{{ post.author }}{% else %}Admin{% endif %}</bdi>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="pCntn">
+                    <div class="pHdr pSml">
+                        <div class="pLbls">
+                            {% for category in post.categories %}
+                            <a aria-label="{{ category }}" href="/categories/{{ category | slugify }}/"
+                                rel="tag">{{ category }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <h2 class="pTtl aTtl sml">
+                        <a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title }}</a>
+                    </h2>
+                    <div class="pSnpt">
+                        {% if post.description %}
+                            {{ post.description | strip_html | truncate: 150 }}
+                        {% else %}
+                            {{ post.content | strip_html | truncate: 150 }}
+                        {% endif %}
+                    </div>
+                    <div class="pInf pSml">
+                        <time class="aTtmp pTtmp pbl" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                        <a aria-label="Read more" class="pJmp blog-button" href="{{ post.url | relative_url }}">Read More</a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <!-- <div> <button id="loadMorePostsButton" class="pagination-button pagination-number">Load More</button> </div> -->
+        <div class="blog-pagination">
+            <button href="#" id="loadMorePostsButton" class="pagination-button pagination-prev">Load More</button>
+        </div>
+    </div>
+</section>

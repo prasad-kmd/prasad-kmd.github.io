@@ -1,0 +1,361 @@
+<style>
+    /* Navbar styles with enhanced Mica effect */
+    .navbar {
+        background: var(--navbar-bg);
+        backdrop-filter: blur(15px) saturate(180%);
+        -webkit-backdrop-filter: blur(15px) saturate(180%);
+        box-shadow: var(--navbar-shadow);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        transition: background var(--transition-speed) ease,
+            box-shadow var(--transition-speed) ease;
+    }
+
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-color);
+        transition: color var(--transition-speed) ease;
+    }
+
+    /* Navigation menu */
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        transition: transform var(--transition-speed) ease-in-out,
+            opacity var(--transition-speed) ease-in-out,
+            background var(--transition-speed) ease;
+    }
+
+    .nav-item {
+        margin-left: 1.5rem;
+        position: relative;
+    }
+
+    .nav-item a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+        padding: 0.5rem 0;
+        display: inline-block;
+    }
+
+    /* Navbar controls (theme toggle and hamburger) */
+    .navbar-controls {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        position: relative;
+        transition: background-color 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+        background-color: rgba(43, 99, 235, 0.1);
+    }
+
+    .theme-toggle-icon {
+        width: 24px;
+        height: 24px;
+        position: relative;
+    }
+
+    .sun-moon {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: var(--text-color);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    /* Sun rays */
+    .sun-moon::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var(--navbar-bg);
+        border-radius: 50%;
+        transform: scale(0);
+        transition: transform 0.3s ease;
+    }
+
+    /* Moon shape */
+    .dark-theme .sun-moon::before {
+        transform: scale(0.7) translateX(30%);
+    }
+
+    /* Sun dots/craters */
+    .dots {
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: var(--navbar-bg);
+        box-shadow: 0 0 0 2px var(--navbar-bg), 6px 6px 0 -1px var(--navbar-bg),
+            -2px 10px 0 -1px var(--navbar-bg);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .dark-theme .dots {
+        opacity: 1;
+    }
+
+    /* Hover effect for desktop */
+    @media (min-width: 992px) {
+        .nav-item a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-item a:hover::after {
+            width: 100%;
+        }
+
+        /* Colorful hover background effect */
+        .nav-item a::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(43, 99, 235, 0.05);
+            font-size: 3rem;
+            font-weight: 700;
+            pointer-events: none;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-item a:hover::before {
+            opacity: 1;
+        }
+    }
+
+    /* Hamburger menu */
+    .menu-toggle {
+        display: none;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        width: 30px;
+        height: 20px;
+        position: relative;
+    }
+
+    .hamburger span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: var(--text-color);
+        border-radius: 3px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+    }
+
+    .hamburger span:nth-child(1) {
+        top: 0px;
+    }
+
+    .hamburger span:nth-child(2) {
+        top: 8px;
+    }
+
+    .hamburger span:nth-child(3) {
+        top: 16px;
+    }
+
+    /* Hamburger animation */
+    .menu-toggle.active .hamburger span:nth-child(1) {
+        top: 8px;
+        transform: rotate(45deg);
+    }
+
+    .menu-toggle.active .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .hamburger span:nth-child(3) {
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+</style>
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>J. Smith</h1>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" data-text="Home">Home</a></li>
+                <li class="nav-item"><a href="#about" data-text="About">About</a></li>
+                <li class="nav-item"><a href="#expertise" data-text="Expertise">Expertise</a></li>
+                <li class="nav-item"><a href="#projects" data-text="Projects">Projects</a></li>
+                <li class="nav-item"><a href="#publications" data-text="Publications">Publications</a></li>
+                <li class="nav-item"><a href="#contact" data-text="Contact">Contact</a></li>
+            </ul>
+
+            <div class="navbar-controls">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <div class="theme-toggle-icon">
+                        <div class="sun-moon">
+                            <div class="dots"></div>
+                        </div>
+                    </div>
+                </button>
+
+                <div class="menu-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector(".nav-menu");
+        const themeToggle = document.querySelector(".theme-toggle");
+        const body = document.body;
+
+        // Toggle menu when hamburger is clicked
+        menuToggle.addEventListener("click", () => {
+            menuToggle.classList.toggle("active");
+            navMenu.classList.toggle("active");
+
+            // Prevent scrolling when menu is open
+            body.classList.toggle("menu-open");
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (event) => {
+            const isClickInsideMenu = navMenu.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+            const isClickOnThemeToggle = themeToggle.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnToggle && !isClickOnThemeToggle && navMenu.classList.contains("active")) {
+                menuToggle.classList.remove("active");
+                navMenu.classList.remove("active");
+                body.classList.remove("menu-open");
+            }
+        });
+        // Toggle theme with navbar button
+        themeToggle.addEventListener("click", toggleTheme);
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            body.classList.add("dark-theme");
+            if (footerThemeToggle) {
+                footerThemeToggle.checked = true;
+            }
+            // Update footer theme on initial load
+            setTimeout(() => updateFooterTheme(true), 100);
+        } else {
+            // Update footer theme on initial load
+            setTimeout(() => updateFooterTheme(false), 100);
+        }
+
+        // Update theme toggle accessibility label
+        function updateThemeToggleAccessibility() {
+            if (body.classList.contains("dark-theme")) {
+                themeToggle.setAttribute("aria-label", "Switch to light theme");
+            } else {
+                themeToggle.setAttribute("aria-label", "Switch to dark theme");
+            }
+        }
+        // Initialize accessibility label
+        updateThemeToggleAccessibility();
+        // Close menu when window is resized to desktop size
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 991 && navMenu.classList.contains("active")) {
+                menuToggle.classList.remove("active");
+                navMenu.classList.remove("active");
+                body.classList.remove("menu-open");
+            }
+        });
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                // Close menu when a link is clicked
+                if (navMenu.classList.contains("active")) {
+                    menuToggle.classList.remove("active");
+                    navMenu.classList.remove("active");
+                    body.classList.remove("menu-open");
+                }
+
+                // Scroll to the target section
+                const targetId = this.getAttribute("href");
+                if (targetId !== "#") {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: "smooth",
+                        });
+                    }
+                }
+            });
+        });
+        // Add a keyboard shortcut for theme toggle (Alt+T)
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey && e.key === 't') {
+                toggleTheme();
+            }
+        });
+    });
+</script>

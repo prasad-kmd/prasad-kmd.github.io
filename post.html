@@ -1,0 +1,626 @@
+---
+layout: post
+title: "Posts"
+permalink: /post/
+activeblog: class="active"
+highlightjs: true
+---
+<section class="post-container">
+    <!-- Featured Image -->
+    <div class="post-image" style="background-image: url('https://placehold.co/1200x600');"></div>
+
+    <!-- Post Title -->
+    <h1 class="post-title">Advancements in Sustainable Engineering</h1>
+
+    <!-- Meta Information -->
+    <div class="post-meta">
+        <div class="post-author">
+            <img src="https://placehold.co/40x40" alt="Author Avatar" class="post-author-avatar">
+            <span class="post-author-name">John Smith</span>
+        </div>
+        <span class="post-date">Published on April 10, 2025</span>
+        <span class="post-category">
+            <a href="#" class="category-link">Engineering</a>
+        </span>
+    </div>
+
+    <!-- Post Content -->
+    <div class="post-content">
+        <p>Sustainable engineering is at the forefront of modern mechanical engineering, addressing the urgent need to
+            reduce environmental impact while maintaining efficiency. In this article, we explore the latest trends,
+            including eco-friendly materials and energy-efficient designs, that are shaping the future of engineering.
+        </p>
+
+        <h2>Eco-Friendly Materials</h2>
+        <p>One of the most significant advancements in sustainable engineering is the development of eco-friendly
+            materials. These materials, such as biodegradable composites and recycled metals, reduce waste and lower the
+            carbon footprint of manufacturing processes.</p>
+        <img src="https://placehold.co/800x400" alt="Eco-Friendly Materials" class="post-content-image">
+
+        <h2>Energy-Efficient Designs</h2>
+        <p>Energy efficiency is another critical area of focus. Engineers are now designing systems that minimize energy
+            consumption without compromising performance. For example, advanced simulation tools allow for the
+            optimization of HVAC systems, ensuring they operate at peak efficiency. Below is a sample Python script that
+            demonstrates a basic energy optimization algorithm for an HVAC system.</p>
+
+        <div class="code-snippet">
+            <div class="code-header">
+                <span class="code-language">Python</span>
+                <span class="code-filename">energy_optimizer.py</span>
+                <button class="copy-button" onclick="copyCode(this)">Copy Code</button>
+            </div>
+            <pre><code>def optimize_hvac(temp, target_temp, max_power):
+    # Calculate the temperature difference
+    delta_temp = target_temp - temp
+    
+    # Determine power usage based on temperature difference
+    if delta_temp > 5:
+        power = max_power
+    elif delta_temp > 2:
+        power = max_power * 0.75
+    else:
+        power = max_power * 0.5
+    
+    return power
+
+# Example usage
+current_temp = 28  # Current room temperature in Celsius
+target_temp = 22   # Desired temperature
+max_power = 1000   # Maximum power in watts
+
+power_usage = optimize_hvac(current_temp, target_temp, max_power)
+print(f"Power Usage: {power_usage} watts")
+</code></pre>
+        </div>
+
+        <blockquote>
+            "Sustainability is not just a trend; it's a necessity for the future of engineering." – John Smith
+        </blockquote>
+
+        <h2>Challenges and Future Directions</h2>
+        <p>Despite these advancements, challenges remain. The high cost of sustainable materials and the complexity of
+            integrating them into existing systems are significant hurdles. However, with continued research and
+            innovation, the future of sustainable engineering looks promising.</p>
+    </div>
+
+    <!-- Share Buttons -->
+    <div class="post-share">
+        <h3>Share This Article</h3>
+        <div class="share-buttons">
+            <a href="#" class="blog-button share-button">Twitter</a>
+            <a href="#" class="blog-button share-button">Facebook</a>
+            <a href="#" class="blog-button share-button">LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="post-faq">
+        <h3>Frequently Asked Questions</h3>
+        <details class="faq-item">
+            <summary>What are eco-friendly materials in engineering?</summary>
+            <p>Eco-friendly materials are those that have a minimal environmental impact during their lifecycle.
+                Examples include biodegradable composites, recycled metals, and bio-based plastics, which reduce waste
+                and carbon emissions.</p>
+        </details>
+        <details class="faq-item">
+            <summary>How do energy-efficient designs benefit HVAC systems?</summary>
+            <p>Energy-efficient designs in HVAC systems reduce power consumption while maintaining performance. This is
+                achieved through advanced simulation, optimized control algorithms, and the use of high-efficiency
+                components, leading to cost savings and lower environmental impact.</p>
+        </details>
+        <details class="faq-item">
+            <summary>What challenges does sustainable engineering face?</summary>
+            <p>Sustainable engineering faces challenges such as the high cost of eco-friendly materials, integration
+                into existing systems, and the need for widespread adoption across industries. Overcoming these requires
+                innovation, policy support, and industry collaboration.</p>
+        </details>
+    </div>
+
+    <!-- Related Posts -->
+    <div class="post-related">
+        <h3>Related Articles</h3>
+        <div class="related-posts">
+            <div class="related-post">
+                <h4><a href="#">The Future of Additive Manufacturing</a></h4>
+                <p>How 3D printing is revolutionizing mechanical engineering with rapid prototyping and complex
+                    geometries.</p>
+            </div>
+            <div class="related-post">
+                <h4><a href="#">Optimizing Mechanical Systems</a></h4>
+                <p>Techniques for improving efficiency in mechanical systems through advanced simulation and modeling.
+                </p>
+            </div>
+            <div class="related-post">
+                <h4><a href="#">Robotics in Manufacturing</a></h4>
+                <p>How robotics is transforming manufacturing with automation and precision engineering.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function copyCode(button) {
+        const code = button.parentElement.nextElementSibling.querySelector('code').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            button.innerText = 'Copied!';
+            setTimeout(() => {
+                button.innerText = 'Copy Code';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy code: ', err);
+        });
+    }
+</script>
+
+<style>
+    /* post.css */
+    .post-container {
+        max-width: 1200px;
+        /* Increased width */
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: var(--background-light);
+        transition: background-color var(--transition-speed) ease;
+    }
+
+    .dark-theme .post-container {
+        background-color: var(--background-dark);
+    }
+
+    .post-image {
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--border-radius-lg);
+        margin-bottom: 2rem;
+        position: relative;
+        transition: transform var(--transition-slow);
+        box-shadow: var(--shadow-md), 0 4px 8px rgba(0, 0, 0, 0.1);
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    .post-image:hover {
+        transform: perspective(1000px) rotateY(2deg);
+        box-shadow: var(--shadow-lg), 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .post-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+        line-height: 1.3;
+        transition: color var(--transition-speed) ease;
+    }
+
+    .dark-theme .post-title {
+        color: var(--text-light);
+    }
+
+    .post-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+        color: var(--text-color);
+    }
+
+    .post-author {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .post-author-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--primary-color);
+    }
+
+    .dark-theme .post-author-avatar {
+        border-color: var(--accent-color);
+    }
+
+    .post-author-name {
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    .dark-theme .post-author-name {
+        color: var(--text-light);
+    }
+
+    .post-date {
+        font-style: italic;
+    }
+
+    .post-category .category-link {
+        font-weight: 600;
+        color: #fff;
+        background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        padding: 0.25rem 0.75rem;
+        border-radius: var(--border-radius-sm);
+        text-decoration: none;
+    }
+
+    .dark-theme .post-category .category-link {
+        background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    }
+
+    .post-content {
+        background: var(--background-glass);
+        padding: 2rem;
+        border-radius: var(--border-radius-lg);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        color: var(--text-color);
+        transition: background var(--transition-normal), color var(--transition-speed) ease;
+    }
+
+    .dark-theme .post-content {
+        background: var(--background-glass);
+        color: var(--text-light);
+    }
+
+    .post-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin: 2rem 0 1rem;
+    }
+
+    .dark-theme .post-content h2 {
+        color: var(--text-light);
+    }
+
+    .post-content-image {
+        width: 100%;
+        height: auto;
+        border-radius: var(--border-radius-md);
+        margin: 1.5rem 0;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .post-content blockquote {
+        border-left: 4px solid var(--primary-color);
+        padding: 1rem 1.5rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+    }
+
+    .dark-theme .post-content blockquote {
+        border-left-color: var(--accent-color);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .code-snippet {
+        margin: 1.5rem 0;
+        border-radius: var(--border-radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .code-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        color: #fff;
+    }
+
+    .dark-theme .code-header {
+        background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    }
+
+    .code-language,
+    .code-filename {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .copy-button {
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        border: none;
+        border-radius: var(--border-radius-sm);
+        cursor: pointer;
+        transition: background var(--transition-fast);
+    }
+
+    .copy-button:hover {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    .post-content pre {
+        margin: 0;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.05);
+        overflow-x: auto;
+    }
+
+    .dark-theme .post-content pre {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .post-content code {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.9rem;
+        color: var(--text-dark);
+    }
+
+    .dark-theme .post-content code {
+        color: var(--text-light);
+    }
+
+    .post-share {
+        margin-bottom: 3rem;
+    }
+
+    .post-share h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+
+    .dark-theme .post-share h3 {
+        color: var(--text-light);
+    }
+
+    .share-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .blog-button.share-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        color: #fff;
+        border-radius: var(--border-radius-md);
+        font-weight: 600;
+        text-decoration: none;
+        transition: all var(--transition-fast);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .blog-button.share-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent);
+        transition: left 0.5s ease;
+    }
+
+    .blog-button.share-button:hover::before {
+        left: 100%;
+    }
+
+    .blog-button.share-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .post-faq {
+        padding: 2rem;
+        background: var(--card-bg);
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-md);
+        margin-bottom: 3rem;
+    }
+
+    .dark-theme .post-faq {
+        background: var(--card-bg);
+    }
+
+    .post-faq h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+    }
+
+    .dark-theme .post-faq h3 {
+        color: var(--text-light);
+    }
+
+    .faq-item {
+        margin-bottom: 1rem;
+        border-radius: var(--border-radius-md);
+        overflow: hidden;
+        background: var(--background-glass);
+        transition: background var(--transition-normal);
+    }
+
+    .dark-theme .faq-item {
+        background: var(--background-glass);
+    }
+
+    .faq-item summary {
+        padding: 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: color var(--transition-speed) ease;
+    }
+
+    .dark-theme .faq-item summary {
+        color: var(--text-light);
+    }
+
+    .faq-item summary::after {
+        content: '▼';
+        font-size: 0.8rem;
+        transition: transform var(--transition-fast);
+    }
+
+    .faq-item[open] summary::after {
+        transform: rotate(180deg);
+    }
+
+    .faq-item summary:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+    .dark-theme .faq-item summary:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .faq-item p {
+        padding: 1rem;
+        margin: 0;
+        color: var(--text-color);
+    }
+
+    .post-related {
+        padding: 2rem;
+        background: var(--card-bg);
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-md);
+    }
+
+    .dark-theme .post-related {
+        background: var(--card-bg);
+    }
+
+    .post-related h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+    }
+
+    .dark-theme .post-related h3 {
+        color: var(--text-light);
+    }
+
+    .related-posts {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .related-post {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+    }
+
+    .related-post:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .related-post h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .related-post h4 a {
+        color: var(--text-dark);
+        text-decoration: none;
+    }
+
+    .dark-theme .related-post h4 a {
+        color: var(--text-light);
+    }
+
+    .related-post p {
+        font-size: 0.9rem;
+        color: var(--text-color);
+        margin: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+        .post-container {
+            max-width: 100%;
+            padding: 1.5rem;
+        }
+
+        .post-image {
+            height: 350px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .post-container {
+            padding: 1rem;
+        }
+
+        .post-image {
+            height: 300px;
+        }
+
+        .post-title {
+            font-size: 2rem;
+        }
+
+        .post-meta {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .post-content {
+            padding: 1.5rem;
+        }
+
+        .post-content h2 {
+            font-size: 1.5rem;
+        }
+
+        .share-buttons {
+            flex-wrap: wrap;
+        }
+
+        .post-faq,
+        .post-related {
+            padding: 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .post-image {
+            height: 200px;
+        }
+
+        .post-title {
+            font-size: 1.8rem;
+        }
+
+        .post-content {
+            padding: 1rem;
+        }
+
+        .post-faq,
+        .post-related {
+            padding: 1rem;
+        }
+    }
+</style>

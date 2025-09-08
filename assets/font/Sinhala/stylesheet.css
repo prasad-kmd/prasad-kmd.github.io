@@ -1,0 +1,302 @@
+@font-face {
+    font-family: 'Abhaya Libre Bold';
+    src: local('Abhaya Libre Bold'), local('AbhayaLibre-Bold'),
+        url('AbhayaLibre-Bold.woff2') format('woff2'),
+        url('AbhayaLibre-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abhaya Libre Medium';
+    src: local('Abhaya Libre Medium'), local('AbhayaLibre-Medium'),
+        url('AbhayaLibre-Medium.woff2') format('woff2'),
+        url('AbhayaLibre-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abhaya Libre SemiBold';
+    src: local('Abhaya Libre SemiBold'), local('AbhayaLibre-SemiBold'),
+        url('AbhayaLibre-SemiBold.woff2') format('woff2'),
+        url('AbhayaLibre-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abhaya Libre ExtraB';
+    src: local('Abhaya Libre ExtraBold'), local('AbhayaLibre-ExtraBold'),
+        url('AbhayaLibre-ExtraBold.woff2') format('woff2'),
+        url('AbhayaLibre-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abhaya Libre';
+    src: local('Abhaya Libre Regular'), local('AbhayaLibre-Regular'),
+        url('AbhayaLibre-Regular.woff2') format('woff2'),
+        url('AbhayaLibre-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Arundathee';
+    src: url('UN-Arundathee.eot');
+    src: local('UN-Arundathee'),
+        url('UN-Arundathee.eot?#iefix') format('embedded-opentype'),
+        url('UN-Arundathee.woff2') format('woff2'),
+        url('UN-Arundathee.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Davasa';
+    src: local('UN-Davasa'),
+        url('UN-Davasa.woff2') format('woff2'),
+        url('UN-Davasa.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Bindumathi';
+    src: local('UN-Bindumathi'),
+        url('UN-Bindumathi.woff2') format('woff2'),
+        url('UN-Bindumathi.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Abhaya';
+    src: local('UN-Abhaya'),
+        url('UN-Abhaya.woff2') format('woff2'),
+        url('UN-Abhaya.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Serif Sinhala';
+    src: local('Noto Serif Sinhala Regular'), local('NotoSerifSinhala-Regular'),
+        url('NotoSerifSinhala-Regular.woff2') format('woff2'),
+        url('NotoSerifSinhala-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Alakamanda';
+    src: local('UN-Alakamanda'),
+        url('UN-Alakamanda.woff2') format('woff2'),
+        url('UN-Alakamanda.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Abhaya';
+    src: local('UN-Abhaya Bold'), local('UN-AbhayaBold'),
+        url('UN-AbhayaBold.woff2') format('woff2'),
+        url('UN-AbhayaBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Basuru';
+    src: local('UN-Basuru'),
+        url('UN-Basuru.woff2') format('woff2'),
+        url('UN-Basuru.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Dharanee';
+    src: local('UN-Dharanee'),
+        url('UN-Dharanee.woff2') format('woff2'),
+        url('UN-Dharanee.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Derana';
+    src: local('UN-Derana'),
+        url('UN-Derana.woff2') format('woff2'),
+        url('UN-Derana.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Gurulugomi';
+    src: local('UN-Gurulugomi'),
+        url('UN-Gurulugomi.woff2') format('woff2'),
+        url('UN-Gurulugomi.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Ganganee';
+    src: local('UN-Ganganee'),
+        url('UN-Ganganee.woff2') format('woff2'),
+        url('UN-Ganganee.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Imanee';
+    src: local('UN-Imanee'),
+        url('UN-Imanee.woff2') format('woff2'),
+        url('UN-Imanee.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Indeevaree';
+    src: local('UN-Indeevaree'),
+        url('UN-Indeevaree.woff2') format('woff2'),
+        url('UN-Indeevaree.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Disapamok';
+    src: local('UN-Disapamok'),
+        url('UN-Disapamok.woff2') format('woff2'),
+        url('UN-Disapamok.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Gemunu';
+    src: local('UN-Gemunu'),
+        url('UN-Gemunu.woff2') format('woff2'),
+        url('UN-Gemunu.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Malithi';
+    src: local('UN-Malithi'),
+        url('UN-Malithi.woff2') format('woff2'),
+        url('UN-Malithi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Rashmi';
+    src: local('UN-Rashmi'),
+        url('UN-Rashmi.woff2') format('woff2'),
+        url('UN-Rashmi.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Samantha';
+    src: local('UN-Samantha'),
+        url('UN-Samantha.woff2') format('woff2'),
+        url('UN-Samantha.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Sandhyanee';
+    src: local('UN-Sandhyanee'),
+        url('UN-Sandhyanee.woff2') format('woff2'),
+        url('UN-Sandhyanee.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Rajantha';
+    src: local('UN-Rajantha'),
+        url('UN-Rajantha.woff2') format('woff2'),
+        url('UN-Rajantha.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UN-Isiwara';
+    src: local('UN-Isiwara'),
+        url('UN-Isiwara.woff2') format('woff2'),
+        url('UN-Isiwara.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Yaldevi Light';
+    src: local('Yaldevi Light'), local('Yaldevi-Light'),
+        url('Yaldevi-Light.woff2') format('woff2'),
+        url('Yaldevi-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Yaldevi Medium';
+    src: local('Yaldevi Medium'), local('Yaldevi-Medium'),
+        url('Yaldevi-Medium.woff2') format('woff2'),
+        url('Yaldevi-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Yaldevi Bold';
+    src: local('Yaldevi Bold'), local('Yaldevi-Bold'),
+        url('Yaldevi-Bold.woff2') format('woff2'),
+        url('Yaldevi-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

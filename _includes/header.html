@@ -1,0 +1,34 @@
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1 class="logo-shine" style="padding-top: 5px;">{{ site.title }}</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/" data-text="Home" {{ page.activeindex}}>Home</a></li>
+                <li class="nav-item"><a href="/about/" data-text="About" {{ page.activeabout}}>About</a></li>
+                <li class="nav-item"><a href="/posts/" data-text="Blog" {{ page.activeblog}}>Blog</a></li>
+                <li class="nav-item"><a href="#projects" data-text="Projects">Projects</a></li>
+                <li class="nav-item"><a href="#publications" data-text="Publications">Publications</a></li>
+                <li class="nav-item"><a href="#contact" data-text="Contact">Contact</a></li>
+            </ul>
+            <div class="navbar-controls">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <div class="theme-toggle-icon">
+                        <div class="sun-moon">
+                            <div class="dots"></div>
+                        </div>
+                    </div>
+                </button>
+
+                <div class="menu-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

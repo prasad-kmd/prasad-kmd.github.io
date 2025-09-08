@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  {% include stylesheet.html %}
+  <link rel="stylesheet" href="{{ " /assets/css/blog.css" | relative_url }}" />
+  {% include enFont.html %}
+  {% include siFont.html %}
+  {% include script.html %}
+</head>
+
+<body>
+  {% include loading.html %}
+  {% include tto.html %}
+  {% include scrollProgress.html %}
+  {% include rcp.html %}
+  {% include header.html %}
+  <main>
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <script src="{{ '/assets/js/loadMore.js' | relative_url }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,438 @@
+@font-face {
+  font-family: "El Messiri Regular";
+  src: url("ElMessiri-Regular.woff2") format("woff2"),
+    url("ElMessiri-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "El Messiri Medium";
+  src: url("ElMessiri-Medium.woff2") format("woff2"),
+    url("ElMessiri-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "El Messiri SemiBold";
+  src: url("ElMessiri-SemiBold.woff2") format("woff2"),
+    url("ElMessiri-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "El Messiri Bold";
+  src: url("ElMessiri-Bold.eot");
+  src: url("ElMessiri-Bold.eot?#iefix") format("embedded-opentype"),
+    url("ElMessiri-Bold.woff2") format("woff2"),
+    url("ElMessiri-Bold.woff") format("woff"),
+    url("ElMessiri-Bold.ttf") format("truetype"),
+    url("ElMessiri-Bold.svg#ElMessiri-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono ExtraBI";
+  src: url("JetBrainsMono-ExtraBoldItalic.woff2") format("woff2"),
+    url("JetBrainsMono-ExtraBoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono Italic";
+  src: url("JetBrainsMono-Italic.woff2") format("woff2"),
+    url("JetBrainsMono-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono Medium";
+  src: url("JetBrainsMono-Medium.woff2") format("woff2"),
+    url("JetBrainsMono-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("JetBrainsMono-Regular.woff2") format("woff2"),
+    url("JetBrainsMono-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono MediumI";
+  src: url("JetBrainsMono-MediumItalic.woff2") format("woff2"),
+    url("JetBrainsMono-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono Bold";
+  src: url("JetBrainsMono-Bold.woff2") format("woff2"),
+    url("JetBrainsMono-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono BoldI";
+  src: url("JetBrainsMono-BoldItalic.woff2") format("woff2"),
+    url("JetBrainsMono-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono ExtraB";
+  src: url("JetBrainsMono-ExtraBold.woff2") format("woff2"),
+    url("JetBrainsMono-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Julius Sans One";
+  src: url("JuliusSansOne-Regular.woff2") format("woff2"),
+    url("JuliusSansOne-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "New Cicle FinaItalic";
+  src: url("NewCicle-FinaItalic.woff2") format("woff2"),
+    url("NewCicle-FinaItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "New Cicle Gordita";
+  src: url("NewCicle-Gordita.woff2") format("woff2"),
+    url("NewCicle-Gordita.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "New Cicle GorditaI";
+  src: url("NewCicle-GorditaItalic.woff2") format("woff2"),
+    url("NewCicle-GorditaItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "New Cicle Semi";
+  src: url("NewCicle-Semi.woff2") format("woff2"),
+    url("NewCicle-Semi.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "New Cicle SemiI";
+  src: url("NewCicle-SemiItalic.woff2") format("woff2"),
+    url("NewCicle-SemiItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "New Cicle Fina";
+  src: url("NewCicle-Fina.woff2") format("woff2"),
+    url("NewCicle-Fina.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Philosopher Bold";
+  src: url("Philosopher-Bold.woff2") format("woff2"),
+    url("Philosopher-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Philosopher";
+  src: url("Philosopher.woff2") format("woff2"),
+    url("Philosopher.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Philosopher Italic";
+  src: url("Philosopher-Italic.woff2") format("woff2"),
+    url("Philosopher-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Philosopher BoldI";
+  src: url("Philosopher-BoldItalic.woff2") format("woff2"),
+    url("Philosopher-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sansumi ExtraB";
+  src: url("Sansumi-ExtraBold.woff2") format("woff2"),
+    url("Sansumi-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sansumi Bold";
+  src: url("Sansumi-Bold.woff2") format("woff2"),
+    url("Sansumi-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Syncopate Bold";
+  src: url("Syncopate-Bold.woff2") format("woff2"),
+    url("Syncopate-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Syncopate";
+  src: url("Syncopate-Regular.woff2") format("woff2"),
+    url("Syncopate-Regular.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Abel";
+  src: url("Abel-Regular.woff2") format("woff2"),
+    url("Abel-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aaargh";
+  src: url("AaarghNormal.woff2") format("woff2"),
+    url("AaarghNormal.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Norwester";
+  src: url("Norwester-Regular.woff2") format("woff2"),
+    url("Norwester-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neuropol";
+  src: url("Neuropol-Regular.woff2") format("woff2"),
+    url("Neuropol-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("Quicksand-Light.woff2") format("woff2"),
+    url("Quicksand-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Orbit";
+  src: url("Orbit-Regular.woff2") format("woff2"),
+    url("Orbit-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neuropol 1";
+  src: url("Neuropol-Regular_1.woff2") format("woff2"),
+    url("Neuropol-Regular_1.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dimitri Swank";
+  src: url("DimitriSwank.woff2") format("woff2"),
+    url("DimitriSwank.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cubic";
+  src: url("Cubic.woff2") format("woff2"), url("Cubic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nasalization Rg";
+  src: url("NasalizationRg-Regular.woff2") format("woff2"),
+    url("NasalizationRg-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google September 2015";
+  src: url("GoogleSeptember2015.woff2") format("woff2"),
+    url("GoogleSeptember2015.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aquatico";
+  src: url("Aquatico-Regular.woff2") format("woff2"),
+    url("Aquatico-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Computerfont";
+  src: url("Computerfont.woff2") format("woff2"),
+    url("Computerfont.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url("GoogleSans-Regular.woff2") format("woff2"),
+    url("GoogleSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GreyscaleBasic";
+  src: url("GreyscaleBasic.woff2") format("woff2"),
+    url("GreyscaleBasic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Walkway";
+  src: url("WalkwaySemiBold.woff2") format("woff2"),
+    url("WalkwaySemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Caviar Dreams";
+  src: url("CaviarDreams.woff2") format("woff2"),
+    url("CaviarDreams.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Harabara Mais Demo";
+  src: local("Harabara Mais Demo"), local("HarabaraMaisBold-HarabaraMaisBold"),
+    url("HarabaraMaisBold-HarabaraMaisBold.woff2") format("woff2"),
+    url("HarabaraMaisBold-HarabaraMaisBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Caliste";
+  src: local("Caliste"), local("CalisteRegular"),
+    url("CalisteRegular.woff2") format("woff2"),
+    url("CalisteRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AMORIA";
+  src: local("AMORIA"), local("AMORIARegular"),
+    url("AMORIARegular.woff2") format("woff2"),
+    url("AMORIARegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Varsity";
+  src: local("Varsity Regular"), local("VarsityRegular"),
+    url("VarsityRegular.woff2") format("woff2"),
+    url("VarsityRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

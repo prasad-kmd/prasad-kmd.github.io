@@ -1,0 +1,184 @@
+---
+layout: post
+title: Enabling LaTeX support in Blogger or Any Website(MathJax)
+date: '2024-12-25T20:24:00.001+05:30'
+author: PRASAD MADHURANGA
+tags:
+- Mathematics
+- Useful Tutorials
+- How to
+- LaTeX
+- Engineering
+modified_time: '2024-12-25T20:24:54.567+05:30'
+
+permalink: /posts/:title-:year:month:day_:hour:minute:second:output_ext
+thumbnail: https://blogger.googleusercontent.com/img/a/AVvXsEgvUXLcYVLtCZ6irm9MVD25bUyTmUZ1X2YvzBRkcWI6N-WACEsKnNvvkkJ8NvJZDGTdM6ecv-Jhqk247MzV4xz9XN3lOaMqvupHyKJAwg6mY6VlVQRJ9KMUvnAJabl4ddm_TgpxZ-EwbCycUzJk4vlyMIphSszssMPdUjz6B3SdtWFR2DYDeEWLSOWW2oWn=s72-c
+blogger_id: tag:blogger.com,1999:blog-3281517134508459306.post-6121216156133141900
+blogger_orig_url: https://prasad-kmd.blogspot.com/2024/12/enabling-latex-support-in-blogger-or.html
+---
+
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript">
+</script>
+<script>
+MathJax = {
+  tex: {
+    packages: [&#39;base&#39;],        // extensions to use
+    inlineMath: [              // start/end delimiter pairs for in-line math
+      [&#39;\\(&#39;, &#39;\\)&#39;]
+    ],
+    displayMath: [             // start/end delimiter pairs for display math
+      [&#39;$$&#39;, &#39;$$&#39;],
+      [&#39;\\[&#39;, &#39;\\]&#39;]
+    ],
+    processEscapes: true,      // use \$ to produce a literal dollar sign
+    processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
+    processRefs: true,         // process \ref{...} outside of math mode
+    digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
+                               // pattern for recognizing numbers
+    tags: &#39;none&#39;,              // or &#39;ams&#39; or &#39;all&#39;
+    tagSide: &#39;right&#39;,          // side for \tag macros
+    tagIndent: &#39;0.8em&#39;,        // amount to indent tags
+    useLabelIds: true,         // use label name rather than tag for ids
+    maxMacros: 10000,          // maximum number of macro substitutions per expression
+    maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
+    baseURL:                   // URL for use with links to tags (when there is a base tag in effect)
+       (document.getElementsByTagName(&#39;base&#39;).length === 0) ?
+        &#39;&#39; : String(document.location).replace(/#.*$/, &#39;&#39;)),
+    formatError:               // function called when TeX syntax errors occur
+        (jax, err) =&gt; jax.formatError(err)    
+  },
+  svg: {
+    scale: 1,                      // global scaling factor for all expressions
+    minScale: .5,                  // smallest scaling factor to use
+    mtextInheritFont: false,       // true to make mtext elements use surrounding font
+    merrorInheritFont: true,       // true to make merror text use surrounding font
+    mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+    skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
+    exFactor: .5,                  // default size of ex in em units
+    displayAlign: &#39;center&#39;,        // default for indentalign when set to &#39;auto&#39;
+    displayIndent: &#39;0&#39;,            // default for indentshift when set to &#39;auto&#39;
+    fontCache: &#39;global&#39;,           // or &#39;global&#39; or &#39;none&#39;
+    localID: null,                 // ID to use for local font cache (for single equation processing)
+    internalSpeechTitles: true,    // insert title tags with speech content
+    titleID: 0                     // initial id number to use for aria-labeledby titles
+  },
+  chtml: {
+    scale: 1,                      // global scaling factor for all expressions
+    minScale: .5,                  // smallest scaling factor to use
+    mtextInheritFont: false,       // true to make mtext elements use surrounding font
+    merrorInheritFont: true,       // true to make merror text use surrounding font
+    mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+    skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
+    exFactor: .5,                  // default size of ex in em units
+    displayAlign: &#39;center&#39;,        // default for indentalign when set to &#39;auto&#39;
+    displayIndent: &#39;0&#39;,            // default for indentshift when set to &#39;auto&#39;
+    matchFontHeight: true,         // true to match ex-height of surrounding font
+    fontURL: &#39;[mathjax]/components/output/chtml/fonts/woff-v2&#39;,   // The URL where the fonts are found
+    adaptiveCSS: true              // true means only produce CSS that is used in the processed equations
+  },
+  options: {
+   ignoreHtmlClass: &#39;tex2jax_ignore|editor-rich-text&#39;
+  }
+};
+</script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" type="text/javascript">
+</script>
+<script async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<h2>Write <mjx-container class="MathJax CtxtMenu_Attached_0" ctxtmenu_counter="0" jax="CHTML" style="font-size: 117.3%; position: relative;" tabindex="0"><mjx-math aria-hidden="true" class="MJX-TEX"><mjx-texatom style="width: 2.558em;" texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c4C"></mjx-c></mjx-mi><mjx-mspace style="margin-right: -0.325em;"></mjx-mspace><mjx-mpadded><mjx-block style="margin: 0.21em 0px 0px; position: relative;"><mjx-rbox style="left: 0px; top: -0.21em;"><mjx-texatom texclass="ORD"><mjx-mstyle size="s"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c41"></mjx-c></mjx-mi></mjx-texatom></mjx-mstyle></mjx-texatom></mjx-rbox></mjx-block></mjx-mpadded><mjx-mspace style="margin-right: -0.17em;"></mjx-mspace><mjx-mi class="mjx-n"><mjx-c class="mjx-c54"></mjx-c></mjx-mi><mjx-mspace style="margin-right: -0.14em;"></mjx-mspace><mjx-mpadded><mjx-block style="margin: -0.216em 0px 0.215em; position: relative;"><mjx-rbox style="left: 0px; top: 0.215em;"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c45"></mjx-c></mjx-mi></mjx-texatom></mjx-rbox></mjx-block></mjx-mpadded><mjx-mspace style="margin-right: -0.115em;"></mjx-mspace><mjx-mi class="mjx-n"><mjx-c class="mjx-c58"></mjx-c></mjx-mi></mjx-texatom></mjx-math><mjx-assistive-mml display="inline" unselectable="on"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">L</mi><mspace width="-.325em"></mspace><mpadded depth="-.21em" height="+.21em" voffset="+.21em"><mrow data-mjx-texclass="ORD"><mstyle displaystyle="false" scriptlevel="1"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">A</mi></mrow></mstyle></mrow></mpadded><mspace width="-.17em"></mspace><mi mathvariant="normal">T</mi><mspace width="-.14em"></mspace><mpadded depth="+.5ex" height="-.5ex" voffset="-.5ex"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">E</mi></mrow></mpadded><mspace width="-.115em"></mspace><mi mathvariant="normal">X</mi></mrow></math></mjx-assistive-mml></mjx-container> equations in <span style="font-family: 'Google Sans';">Blogger</span></h2>
+
+<img data-original-height="720" data-original-width="1280" src="https://blogger.googleusercontent.com/img/a/AVvXsEgvUXLcYVLtCZ6irm9MVD25bUyTmUZ1X2YvzBRkcWI6N-WACEsKnNvvkkJ8NvJZDGTdM6ecv-Jhqk247MzV4xz9XN3lOaMqvupHyKJAwg6mY6VlVQRJ9KMUvnAJabl4ddm_TgpxZ-EwbCycUzJk4vlyMIphSszssMPdUjz6B3SdtWFR2DYDeEWLSOWW2oWn=s16000" />
+<br /><b>
+LaTeX </b>is a powerful typesetting system that is widely used for writing mathematical and scientific documents. <i>MathJax </i>is a JavaScript library that allows you to display LaTeX equations on web pages. This guide will walk you through the steps to enable MathJax on your Blogger site and use LaTeX to write mathematical expressions.<br />
+
+
+<h3 style="text-align: left;">Enabling MathJax on Blogger</h3><h4 style="text-align: left;">Step 1: Access Your Blogger Template</h4><div><ol style="text-align: left;"><li>Log in to your Blogger account.</li><li>Go to the <b>Dashboard</b>.</li><li>Select the blog where you want to enable MathJax.</li><li>Click on <b>Theme</b>.</li><li>Click on arrow button that with the&nbsp;<b>Customise</b>.</li><li>Click on <b>Edit HTML</b>.</li></ol></div><h4 style="text-align: left;">Step 2: Add MathJax Configuration</h4><div>Add the following script after the <i>&lt;head&gt;</i> tag in your Blogger template:</div><br />
+<pre><code class="language-html">&lt;script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js' type='text/javascript'&gt;
+&lt;/script&gt;
+&lt;script&gt;
+MathJax = {
+  tex: {
+    packages: [&amp;#39;base&amp;#39;],        // extensions to use
+    inlineMath: [              // start/end delimiter pairs for in-line math
+      [&amp;#39;\\(&amp;#39;, &amp;#39;\\)&amp;#39;]
+    ],
+    displayMath: [             // start/end delimiter pairs for display math
+      [&amp;#39;$$&amp;#39;, &amp;#39;$$&amp;#39;],
+      [&amp;#39;\\[&amp;#39;, &amp;#39;\\]&amp;#39;]
+    ],
+    processEscapes: true,      // use \$ to produce a literal dollar sign
+    processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
+    processRefs: true,         // process \ref{...} outside of math mode
+    digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
+                               // pattern for recognizing numbers
+    tags: &amp;#39;none&amp;#39;,              // or &amp;#39;ams&amp;#39; or &amp;#39;all&amp;#39;
+    tagSide: &amp;#39;right&amp;#39;,          // side for \tag macros
+    tagIndent: &amp;#39;0.8em&amp;#39;,        // amount to indent tags
+    useLabelIds: true,         // use label name rather than tag for ids
+    maxMacros: 10000,          // maximum number of macro substitutions per expression
+    maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
+    baseURL:                   // URL for use with links to tags (when there is a base tag in effect)
+       (document.getElementsByTagName(&amp;#39;base&amp;#39;).length === 0) ?
+        &amp;#39;&amp;#39; : String(document.location).replace(/#.*$/, &amp;#39;&amp;#39;)),
+    formatError:               // function called when TeX syntax errors occur
+        (jax, err) =&amp;gt; jax.formatError(err)    
+  },
+  svg: {
+    scale: 1,                      // global scaling factor for all expressions
+    minScale: .5,                  // smallest scaling factor to use
+    mtextInheritFont: false,       // true to make mtext elements use surrounding font
+    merrorInheritFont: true,       // true to make merror text use surrounding font
+    mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+    skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
+    exFactor: .5,                  // default size of ex in em units
+    displayAlign: &amp;#39;center&amp;#39;,        // default for indentalign when set to &amp;#39;auto&amp;#39;
+    displayIndent: &amp;#39;0&amp;#39;,            // default for indentshift when set to &amp;#39;auto&amp;#39;
+    fontCache: &amp;#39;global&amp;#39;,           // or &amp;#39;global&amp;#39; or &amp;#39;none&amp;#39;
+    localID: null,                 // ID to use for local font cache (for single equation processing)
+    internalSpeechTitles: true,    // insert title tags with speech content
+    titleID: 0                     // initial id number to use for aria-labeledby titles
+  },
+  chtml: {
+    scale: 1,                      // global scaling factor for all expressions
+    minScale: .5,                  // smallest scaling factor to use
+    mtextInheritFont: false,       // true to make mtext elements use surrounding font
+    merrorInheritFont: true,       // true to make merror text use surrounding font
+    mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+    skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
+    exFactor: .5,                  // default size of ex in em units
+    displayAlign: &amp;#39;center&amp;#39;,        // default for indentalign when set to &amp;#39;auto&amp;#39;
+    displayIndent: &amp;#39;0&amp;#39;,            // default for indentshift when set to &amp;#39;auto&amp;#39;
+    matchFontHeight: true,         // true to match ex-height of surrounding font
+    fontURL: &amp;#39;[mathjax]/components/output/chtml/fonts/woff-v2&amp;#39;,   // The URL where the fonts are found
+    adaptiveCSS: true              // true means only produce CSS that is used in the processed equations
+  },
+  options: {
+   ignoreHtmlClass: &amp;#39;tex2jax_ignore|editor-rich-text&amp;#39;
+  }
+};
+&lt;/script&gt;
+&lt;script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js' type='text/javascript'&gt;
+&lt;/script&gt;
+&lt;script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'&gt;
+&lt;/script&gt;
+</code></pre>
+<br /><h4 style="text-align: left;">
+Step 3: Save Your Changes&nbsp;</h4><div>After adding the MathJax configuration, click on Save.
+Preview your blog to ensure that MathJax is working correctly.
+</div><div><br /></div><div><h3 style="text-align: left;">Writing LaTeX on Your Blogger Site</h3><h4 style="text-align: left;">Inline Math</h4><div>To write inline mathematical expressions, enclose your LaTeX code between single dollar signs ($) or backslashes and parentheses ( <code>\(</code> and <code>\)</code> ).</div></div><div><br /></div><div>Input :<code>\( x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \)</code></div><div>Output: \( x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \) .</div><div><br /></div><div><h4 style="text-align: left;">Display Math</h4><div>To write displayed mathematical expressions, enclose your LaTeX code between double dollar signs <code>($$)</code> or backslashes and square brackets ( <code>\[</code> and <code>\]</code> ).</div></div><div><br /></div><div>Input : <code>\[displaystyle R_{\mu\nu}-\frac{1}{2}R,g_{\mu\nu} + \Lambda,g_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu} \]</code></div><div>Output :\[R_{\mu\nu}-\frac{1}{2}R,g_{\mu\nu} + \Lambda,g_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu} \]</div><div><br /></div><h3 style="text-align: left;">
+
+Additional Resources</h3><div>
+<ul>
+<li><a rel="noreferrer" href="{{ site.baseurl }}{% post_url 2024-12-25-enabling-latex-support-in-blogger-or %}" target="_blank">Enabling LaTeX support in Blogger or Any Website(MathJax)</a></li>
+<li><a rel="noreferrer" href="https://webapps.stackexchange.com/q/13053/196564" target="_blank">Stack Exchange: How to use MathJax on Blogger</a></li>
+<li><a rel="noreferrer" href="https://tex.stackexchange.com/a/13868/114006" target="_blank">TeX Stack Exchange: MathJax in Blogger</a></li>
+<li><a rel="noreferrer" href="https://irrep.blogspot.com/2011/02/mathjax-in-blogger.html" target="_blank">MathJax in Blogger (Old Guide)</a></li>
+<li><a rel="noreferrer" href="https://docs.mathjax.org/en/v2.7-latest/options/preprocessors/tex2jax.html" target="_blank">MathJax v2.7 Documentation: tex2jax Preprocessor</a></li>
+<li><a rel="noreferrer" href="https://docs.mathjax.org/en/latest/web/start.html#ways-of-accessing-mathjax" target="_blank">MathJax v3 Documentation: Getting Started</a></li>
+<li><a rel="noreferrer" href="https://docs.mathjax.org/en/latest/web/configuration.html#converting-your-v2-configuration-to-v3" target="_blank">MathJax v3 Documentation: Configuration</a></li>
+<li><a rel="noreferrer" href="https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html" target="_blank">MathJax Configuration Converter</a></li>
+<li><a rel="noreferrer" href="https://github.com/daattali/beautiful-jekyll/issues/195" target="_blank">Beautiful Jekyll Issue: MathJax Configuration</a></li>
+<li><a rel="noreferrer" href="https://koutuholi.blogspot.com/2021/04/mathjax.html?m=1#v3" target="_blank">Write LaTeX using MathJax
+</a></li>
+</ul>
+</div><div>&nbsp;By following these steps, you should be able to successfully implement LaTeX on your Blogger site using MathJax. </div>

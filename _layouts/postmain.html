@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ " /assets/css/post.css" | relative_url }}" />
+  {% include stylesheet.html %}
+  {% include enFont.html %}
+  {% include siFont.html %}
+  {% include script.html %}
+  {% if page.latex %}
+  {% include KaTeX.html %}
+  {% endif %}
+  {% if page.highlightjs %}
+  {% include highlightjs.html %}
+  {% endif %}
+</head>
+
+<body>
+  {% include loading.html %}
+  {% include tto.html %}
+  {% include scrollProgress.html %}
+  {% include rcp.html %}
+  {% include header.html %}
+  {% include cookiesconsent2.html %}
+  <main>
+    {{ content }}
+  </main>
+  {% include threejs.html %}
+  {% include footer.html %}
+  {% include vanta/fog.html %}
+<script>
+    VANTA.FOG({
+        el: "footer",
+        mouseControls: false,
+        touchControls: false,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        speed: 0.75,
+        zoom: 0.50
+    })
+</script>
+</body>
+
+</html>
