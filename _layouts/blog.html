@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <title>{{ page.title }} - {{ site.title }}</title>
   {% include stylesheet.html %}
-  <link rel="stylesheet" href="{{ " /assets/css/blog.css" | relative_url }}" />
+  <link rel="stylesheet" href="{{ " ./assets/css/blog.css" | relative_url }}" />
   {% include enFont.html %}
   {% include siFont.html %}
   {% include script.html %}
@@ -22,7 +22,7 @@
     {{ content }}
   </main>
   {% include footer.html %}
-  <script src="{{ '/assets/js/loadMore.js' | relative_url }}"></script>
+  <script src="{{ './assets/js/loadMore.js' | relative_url }}"></script>
 </body>
 
 </html>
